@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LYCÉE PRIVÉ LA SOURCE - Personnel</title>
+
+  <style>
+    /* ========== STYLE GENERAL ========== */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #2c3e50;
+    }
+
+    /* ========== HEADER & NAVIGATION ========== */
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      padding: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    /* Mobile nav optimization */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      border: 3px solid #1abc9c;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: rotate(5deg);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    nav a.active {
+      background-color: #1abc9c;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+    }
+
+    nav a:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* ========== TITLES ========== */
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #34495e;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* ========== PERSONNEL ADMINISTRATIF ========== */
+    .enseignant-supplementaire {
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin-bottom: 40px;
+      background-color: #f9f9f9;
+      box-shadow: 2px 2px 8px rgba(0, 123, 255, 0.2);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .enseignant-supplementaire ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: 15px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+    }
+    /* Menu mobile hidden by default */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link styles */
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Hamburger button hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+
+    /* ========== TABLEAU ENSEIGNANTS ========== */
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: linear-gradient(90deg, #3498db, #2980b9);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    thead th {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f9ff;
+    }
+
+    tbody td {
+      padding: 12px 15px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      .enseignant-supplementaire {
+        padding: 15px;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      thead th, tbody td {
+        padding: 10px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo-n'ny Sekoly" class="logo" />
+  
+    <!-- Bouton toggle menu (hamburger) -->
+    <button class="nav-toggle" aria-label="Open navigation">&#9776;</button>
+  
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="historique.html" class="nav-link">Historique</a></li>
+        <li><a href="enseignant.html" class="nav-link">Enseignant</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="enseignant-supplementaire">
+      <h3>Les Personnels Administratifs</h3>
+      <ul>
+        <li>Une Directrice</li>
+        <li>Un Proviseur</li>
+        <li>Une Secrétaire</li>
+        <li>Un Surveillant Général</li>
+      </ul>
+    </div>
+
+    <h2>Les Personnels Enseignants</h2>
+
+    <table border="0" cellspacing="0" cellpadding="0" role="table" aria-label="Liste du personnel enseignant">
+      <thead>
+        <tr>
+          <th scope="col">N°</th>
+          <th scope="col">Nom et Prénom</th>
+          <th scope="col">Les matières enseignées</th>
+          <th scope="col">Contact téléphonique</th>
+        </tr>
+      </thead>
+      <tbody>
+     <tr><td>01</td><td>RAFARIMANANA Sylvie</td><td style="color:blue;">Directrice</td><td>034 86 123 71</td></tr>
+<tr><td>02</td><td>ANDRIAFENOTSAINA Tiandraza Eliasy</td><td style="color:blue;">Proviseur</td><td>034 15 466 13</td></tr>
+<tr><td>03</td><td>DADIVA Marco Verich</td><td style="color:blue;">Anglais</td><td>034 84 205 77</td></tr>
+<tr><td>04</td><td>RANDRIAMASY Eddy Valdanau</td><td style="color:blue;">Mathématiques</td><td>034 04 388 61</td></tr>
+<tr><td>05</td><td>RASOANJANAHARY Angeline</td><td style="color:blue;">Mathématiques</td><td>034 86 536 37</td></tr>
+<tr><td>06</td><td>MALALAHAJA Vololonirina Emmanuëline</td><td style="color:blue;">Malagasy</td><td>034 97 053 53</td></tr>
+<tr><td>07</td><td>RAKOTONIRINA Fanirisoa Tiavina</td><td style="color:blue;">Anglais</td><td>034 52 233 15</td></tr>
+<tr><td>08</td><td>RAZAFINDRANOTSY Marie Lydia</td><td style="color:blue;">9<sup>ème</sup></td><td>034 81 545 90</td></tr>
+<tr><td>09</td><td>RAMBELOSON Faraniaina Bernarde</td><td style="color:blue;">7<sup>ème</sup></td><td>034 13 001 20</td></tr>
+<tr><td>10</td><td>Rarisoa Evelyne Edmonde</td><td style="color:blue;">8<sup>ème</sup></td><td>034 24 333 57</td></tr>
+<tr><td>11</td><td>RATSIMALAHELO Mamy Adolphe</td><td style="color:blue;">Histo-Géo EC</td><td>034 01 746 49</td></tr>
+<tr><td>12</td><td>RASOANIRINA Vololoniaina Myriam</td><td style="color:blue;">10<sup>ème</sup></td><td>034 39 248 69</td></tr>
+<tr><td>13</td><td>MANAHIRA Julianà Eléonore</td><td style="color:blue;">11<sup>ème</sup></td><td>038 08 146 50</td></tr>
+<tr><td>14</td><td>RAVOLOLOMBOAHIRANA Hélène Juliana</td><td style="color:blue;">Français</td><td>034 93 313 57</td></tr>
+<tr><td>15</td><td>RAHARIFANANTENANA Santatriniaina</td><td style="color:blue;">Français</td><td>034 60 499 48</td></tr>
+<tr><td>16</td><td>SOANDRO Jean René</td><td style="color:blue;">Surveillant Général</td><td>034 72 083 54</td></tr>
+<tr><td>17</td><td>RONALDO</td><td style="color:blue;">Physique-Chimie</td><td>034 75 133 40</td></tr>
+<tr><td>18</td><td>ANDRIAFENOTSAINA Ralison Eric</td><td style="color:blue;">Malagasy</td><td>038 83 230 29</td></tr>
+<tr><td>19</td><td>HANTANIRINA Paulette Anna Clara</td><td style="color:blue;">Grande section</td><td>038 63 661 73</td></tr>
+<tr><td>20</td><td>VEROHASINIAINA Lucia</td><td style="color:blue;">Moyenne section</td><td>038 06 473 90</td></tr>
+<tr><td>21</td><td>NARINDRANIAINA Sandrinà</td><td style="color:blue;">Petite section</td><td>038 29 307 00</td></tr>
+<tr><td>22</td><td>ANDRIAMANAMPISOA Nirina Fabien</td><td style="color:blue;">Informatique</td><td>034 65 368 97</td></tr>
+
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lycée Privé La Source - Soanierana, Fianarantsoa</p>
+  </footer>
+  <script>
+    // Toggle nav menu on mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+  
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

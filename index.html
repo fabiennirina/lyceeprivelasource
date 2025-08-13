@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LYCÉE PRIVÉ LA SOURCE - Accueil</title>
+  <style>
+    /* -----------------------------
+       STYLES DE BASE ET ANIMATIONS
+    ----------------------------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes scaleUp {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* -----------------------------
+       STYLES GÉNÉRAUX
+    ----------------------------- */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    
+    /* -----------------------------
+       HEADER
+    ----------------------------- */
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: slideIn 0.8s ease-out;
+    }
+    
+    .logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      border: 3px solid #1abc9c;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .logo:hover {
+      transform: rotate(5deg) scale(1.1);
+      animation: none;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+    }
+    
+    nav li {
+      margin: 0 0.5rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    nav a.active {
+      background: #1abc9c;
+    }
+    
+    nav a:not(.active):hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #1abc9c;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+    
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    /* -----------------------------
+       MAIN CONTENT
+    ----------------------------- */
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+    
+    /* -----------------------------
+       FORMATION SECTION
+    ----------------------------- */
+    .btn-formation {
+      background: #1abc9c;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 2rem auto;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+    }
+    
+    .btn-formation:hover {
+      background: #16a085;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      animation: none;
+    }
+    
+    .btn-formation:active {
+      transform: translateY(1px);
+    }
+    
+    .formation-list {
+      background: #f8fbfa;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      border-radius: 8px;
+      border-left: 4px solid #1abc9c;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      animation: scaleUp 0.5s ease-out;
+    }
+    
+    .formation-list h3 {
+      color: #2c3e50;
+      margin-top: 0;
+      text-align: center;
+    }
+    
+    .formation-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .formation-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .formation-list li::before {
+      content: '✓';
+      color: #1abc9c;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    
+    /* -----------------------------
+       GALERIE
+    ----------------------------- */
+    .galerie {
+      margin-top: 3rem;
+    }
+    
+    .galerie h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .galerie h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: #1abc9c;
+      border-radius: 2px;
+    }
+    
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .image-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    
+    .image-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .image-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .image-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .image-item p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      margin: 0;
+      padding: 0.8rem;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .image-item:hover p {
+      transform: translateY(0);
+    }
+
+    /* ======= PARTENARIAT ======= */
+    .partenariat {
+      max-width: 900px;
+      margin: 3rem auto 5rem auto;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .partenariat h2 {
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #1abc9c;
+      font-size: 1.8rem;
+    }
+
+    .partenaires-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .partenaires-list li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.1rem;
+      color: #34495e;
+      min-width: 120px;
+    }
+    /* Mobile nav optimization */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+    /* Sary */
+    .partenaire-img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 0.7rem;
+      transition: transform 0.3s ease;
+    }
+
+    .partenaire-img:hover {
+      transform: scale(1.05);
+    }
+    /* Menu mobile hidden by default */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link styles */
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Hamburger button hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+
+    /* Cercle FRAM */
+    .fram-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #1abc9c;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      user-select: none;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+    }
+    
+    /* -----------------------------
+       FOOTER
+    ----------------------------- */
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    span{
+      color:blue;
+    }
+    
+    /* -----------------------------
+       RESPONSIVE DESIGN
+    ----------------------------- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .logo {
+        margin-bottom: 1rem;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav li {
+        margin: 0.3rem;
+      }
+      
+      .image-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .partenaires-list {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="logo.jpg" alt="Logo-n'ny Sekoly" class="logo" />
+  
+    <!-- Bouton toggle menu (hamburger) -->
+    <button class="nav-toggle" aria-label="Open navigation">&#9776;</button>
+  
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="historique.html" class="nav-link">Historique</a></li>
+        <li><a href="enseignant.html" class="nav-link">Enseignant</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <button onclick="toggleFormation()" class="btn-formation" aria-expanded="false">Voir les Formations</button>
+
+    <div id="formation-classes" class="formation-list" style="display: none;">
+      <h3>Niveaux proposés</h3>
+      <ul>
+        <li>Classe de PS</li>
+        <li>Classe de MS</li>
+        <li>Classe de GS</li>
+        <li>Classe de 11<sup>ème</sup>, 10<sup>ème</sup>, 9<sup>ème</sup>, 8<sup>ème</sup>, 7<sup>ème</sup></li>
+
+        <li>Classe de 6<sup>ème</sup> jusqu'à Terminal</li>
+      </ul>
+    </div>
+
+    <!-- Galerie -->
+    <section class="galerie">
+      <h2>Galerie</h2>
+      <div class="image-container">
+        <div class="image-item">
+          <img src="prof.jpg" alt="Enseignant" />
+          <p>Notre équipe enseignante</p>
+        </div>
+        <div class="image-item">
+          <img src="proff.jpg" alt="Salle de classe" />
+          <p>Professeurs</p>
+        </div>
+        <div class="image-item">
+          <img src="11.jpg" alt="Journée des écoles" />
+          <p>Activités scolaires</p>
+        </div>
+        <div class="image-item">
+          <img src="10.jpg" alt="Événement scolaire" />
+          <p>Journée des Ecole</p>
+        </div>
+        <div class="image-item">
+          <img src="12.jpg" alt="Cérémonie" />
+          <p>Cérémonies</p>
+        </div>
+        <div class="image-item">
+          <img src="15.jpg" alt="Sortie scolaire" />
+          <p>Journée des Ecole</p>
+        </div>
+        <div class="image-item">
+          <img src="13.jpg" alt="Compétition" />
+          <p>Journée des Ecole</p>
+        </div>
+      </div>
+    </section>
+
+   <!-- PARTENARIAT (atsangano mivantana tsy ao anaty div na liste mitovy efitra) -->
+
+<section style="max-width: 900px; margin: 3rem auto; padding: 1rem; text-align:center;">
+  <h2 style="color:#1abc9c; font-weight:700; margin-bottom:2rem; font-size:1.8rem;">
+    Le Partenariat de l'Établissement
+  </h2>
+  <ul style="
+    display: flex; 
+    justify-content: center; 
+    gap: 3rem; 
+    padding: 0; margin: 0; 
+    list-style: none;
+    align-items: center;
+    ">
+    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+      <div style="
+        width:120px; height:120px; 
+        border-radius: 50%; 
+        background: #1abc9c; 
+        color: white; 
+        font-weight: 700; 
+        font-size: 1.5rem; 
+        display: flex; justify-content: center; align-items: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        text-transform: uppercase;
+        user-select:none;
+        margin-bottom: 0.5rem;
+      ">
+        FRAM
+      </div>
+      <span>Association des Parents d'Elève</span>
+    </li>
+    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+      <img src="alliance.jpg" alt="Alliance Française" style="width:120px; height:120px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
+      <span>Alliance Française Anjoma Fianarantsoa</span>
+    </li>
+    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+      <img src="cedii.jpg" alt="CEDII" style="width:120px; height:120px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
+      <p>
+        <span class="accent">C</span>entre
+        d'<span class="accent">E</span>changes
+        de <span class="accent">D</span>ocumentation
+        et d'<span class="accent">I</span>nformation
+        <span class="accent">I</span>nterinstitutionnels
+      </p>
+    </li>
+  </ul>
+</section>
+<section>
+  <main>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.3663511269755!2d47.107830375967735!3d-21.453440180438667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bf6a1830a973%3A0xd26473a74e4e7dd9!2sColl%C3%A8ge%20Priv%C3%A9%20La%20Source!5e0!3m2!1sfr!2smg!4v1720345460583!5m2!1sfr!2smg"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      style="width:100%; height:450px; border:0;">
+    </iframe>
+  </main>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lycée Privé La Source - Soanierana, Fianarantsoa</p>
+  </footer>
+
+  <script>
+    function toggleFormation() {
+      const list = document.getElementById("formation-classes");
+      const btn = document.querySelector(".btn-formation");
+      if (list.style.display === "none") {
+        list.style.display = "block";
+        btn.setAttribute("aria-expanded", "true");
+        // Animation when showing
+        list.style.animation = "scaleUp 0.5s ease-out";
+      } else {
+        list.style.display = "none";
+        btn.setAttribute("aria-expanded", "false");
+      }
+    }
+    // Toggle nav menu on mobile
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  navToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+    
+    // Animation au chargement de la page
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.image-item');
+      
+      images.forEach((image, index) => {
+        // Délai d'animation progressif
+        image.style.animation = `fadeIn 0.5s ease-out ${index * 0.1}s forwards`;
+      });
+      
+      // Animation for header elements
+      const logo = document.querySelector('.logo');
+      const navItems = document.querySelectorAll('nav li');
+      
+      if (logo) {
+        logo.style.animation = "float 4s ease-in-out infinite";
+      }
+      
+      navItems.forEach((item, index) => {
+        item.style.animation = `slideIn 0.5s ease-out ${index * 0.1 + 0.3}s forwards`;
+        item.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>

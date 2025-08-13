@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LYCÉE PRIVÉ LA SOURCE - Contact</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #1abc9c;
+      --accent-color: #3498db;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-color);
+      color: #333;
+    }
+
+    header {
+      background: var(--dark-color);
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      border: 3px solid var(--secondary-color);
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    /* Menu mobile hidden by default */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link styles */
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Hamburger button hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+
+    .logo:hover {
+      transform: rotate(5deg);
+    }
+
+    .map-title {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), #34495e);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    /* Mobile nav optimization */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+    
+      .phone-number {
+        color: var(--accent-color); /* Manga avy amin'ny palette */
+        font-weight: bold;
+      }
+    
+    
+
+    /* Responsive améliorations */
+    @media (max-width: 767.98px) {
+      .card-body {
+        padding: 1rem !important;
+      }
+      nav ul.nav {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+      }
+      .row > [class*="col-"] {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo-n'ny Sekoly" class="logo" />
+  
+    <!-- Bouton toggle menu (hamburger) -->
+    <button class="nav-toggle" aria-label="Open navigation">&#9776;</button>
+  
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="historique.html" class="nav-link">Historique</a></li>
+        <li><a href="enseignant.html" class="nav-link">Enseignant</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="container my-5 bg-white p-4 rounded shadow-sm" style="max-width: 900px;">
+  <section class="contact">
+    <h2 class="text-center mb-4" style="color: var(--primary-color); font-weight: 600;">Nous Contacter</h2>
+
+    <div class="row mb-4 g-4">
+      <!-- Contacts responsables en premier -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><u>Directrice</u></h5>
+            <p class="card-text phone-number">+261 034 86 123 71</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><u>Proviseur</u></h5>
+            <p class="card-text phone-number">+261 034 15 466 13</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><u>Surveillant Général</u></h5>
+            <p class="card-text phone-number">+261 034 72 083 54</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Email et Adresse après -->
+      <div class="col-md-6 d-flex align-items-center bg-light p-3 rounded shadow-sm">
+        <div class="fs-3 text-white bg-success rounded-circle d-flex justify-content-center align-items-center me-3" style="width:50px; height:50px;">✉️</div>
+        <p class="mb-0">lyceepriveelasource@gmail.com</p>
+      </div>
+      <div class="col-md-6 d-flex align-items-center bg-light p-3 rounded shadow-sm">
+        <div class="fs-3 text-white bg-info rounded-circle d-flex justify-content-center align-items-center me-3" style="width:50px; height:50px;">📍</div>
+        <p class="mb-0">Soanierana, Fianarantsoa</p>
+      </div>
+    </div>
+
+    <form class="mb-5">
+      <h3 class="text-center mb-4" style="color: var(--primary-color); font-weight: 600;">Envoyez-nous un message</h3>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nom :</label>
+        <input type="text" id="name" name="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email :</label>
+        <input type="email" id="email" name="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message :</label>
+        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success px-4">Envoyer</button>
+      </div>
+    </form>
+
+    <h3 class="map-title">Localisation de notre établissement</h3>
+    <div class="ratio ratio-16x9 rounded shadow-sm border border-secondary">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.3663511269755!2d47.107830375967735!3d-21.453440180438667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bf6a1830a973%3A0xd26473a74e4e7dd9!2sColl%C3%A8ge%20Priv%C3%A9%20La%20Source!5e0!3m2!1sfr!2smg!4v1720345460583!5m2!1sfr!2smg"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        style="border:0;">
+      </iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="mb-0">© 2025 Lycée Privé La Source - Soanierana, Fianarantsoa</p>
+</footer>
+
+<!-- Bootstrap JS (optionnel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
