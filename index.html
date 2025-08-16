@@ -5,102 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LYCÉE PRIVÉ LA SOURCE - Accueil</title>
   <style>
-    /* =============================
-       VARIABLES & RESET
-    ============================= */
-    :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #1abc9c;
-      --accent-color: #3498db;
-      --light-color: #f8f9fa;
-      --dark-color: #343a40;
-    }
+  /* =========================
+   VARIABLES & RESET
+========================= */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #1abc9c;
+  --accent-color: #3498db;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --text-color: #333;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background-color: var(--light-color);
-      color: #333;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
 
-    /* =============================
-       HEADER
-    ============================= */
-    header {
-      background: var(--dark-color);
-      color: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      animation: slideIn 0.8s ease-out;
-    }
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+header {
+  background: var(--dark-color);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .logo {
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-      border: 3px solid var(--secondary-color);
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      animation: float 4s ease-in-out infinite;
-    }
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--secondary-color);
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
 
-    .logo:hover {
-      transform: rotate(5deg) scale(1.1);
-      animation: none;
-    }
+.logo:hover {
+  transform: rotate(5deg);
+}
 
-    nav {
-      flex: 1;
-      text-align: right;
-    }
+nav {
+  flex: 1;
+  text-align: right;
+}
 
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      justify-content: flex-end;
-      align-items: center;
-    }
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-    .nav-link {
-      display: block;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      color: white;
-      border-radius: 20px;
-      font-weight: 500;
-      transition: background 0.3s ease;
-    }
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease;
+}
 
-    .nav-link:hover {
-      background: rgba(255,255,255,0.1);
-    }
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
 
-    .nav-link.active {
-      background-color: var(--secondary-color);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transform: translateY(-2px);
-    }
+.nav-link.active {
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
 
-    .nav-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
 
     /* =============================
        MAIN CONTENT
@@ -197,58 +229,74 @@
     .image-item p { position:absolute; bottom:0; left:0; right:0; background: rgba(0,0,0,0.7); color:white; margin:0; padding:0.8rem; text-align:center; transform:translateY(100%); transition:transform 0.3s ease; }
     .image-item:hover p { transform:translateY(0); }
 
-    /* PARTENARIAT */
     .partenariat {
       max-width: 900px;
-      margin: 3rem auto 5rem auto;
-      padding: 1rem 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow:0 4px 15px rgba(0,0,0,0.1);
-      text-align:center;
-      color: var(--primary-color);
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
     }
-    .partenariat h2 { font-weight:700; margin-bottom:1.8rem; color:var(--secondary-color); font-size:1.8rem; }
-    .partenaires-list {
-      list-style:none;
-      padding:0;
-      margin:0 auto;
-      display:flex;
-      justify-content:center;
-      gap:3rem;
-      flex-wrap:wrap;
-      align-items:center;
+    
+    .partenariat h2 {
+      color: #1abc9c;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
     }
-    .partenaires-list li {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      font-size:1.1rem;
-      color: #34495e;
-      min-width:120px;
-      text-align:center;
+    
+    .partenariat ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
-    .partenaire-img, .fram-circle {
-      width:120px;
-      height:120px;
-      object-fit:contain;
-      border-radius:10px;
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
-      margin-bottom:0.7rem;
-      transition: transform 0.3s ease;
+    
+    /* Ho an'ny PC, sary + texte milahatra miambina */
+    .partenariat li {
+      display: flex;
+      flex-direction: column; /* vertical amin'ny mobile */
+      align-items: center;
+      min-width: 150px;
+      text-align: center;
     }
-    .partenaire-img:hover, .fram-circle:hover { transform:scale(1.05); }
-    .fram-circle {
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      background: var(--secondary-color);
-      color:white;
-      font-weight:700;
-      font-size:1.5rem;
-      user-select:none;
-      text-transform:uppercase;
+    
+    /* sary / cercle */
+    .partenariat li div,
+    .partenariat li img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
     }
+    
+    /* Images miaraka amin'ny corners manokana */
+    .partenariat li img {
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    
+    /* Responsive ho an'ny mobile / horizontal scroll */
+    @media (max-width: 768px) {
+      .partenariat ul {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+      }
+    
+      .partenariat li {
+        flex: 0 0 auto;
+      }
+    }
+    
 
     /* FOOTER */
     footer {
@@ -347,60 +395,25 @@
     </section>
 
    <!-- PARTENARIAT (atsangano mivantana tsy ao anaty div na liste mitovy efitra) -->
-
-   <section style="max-width: 900px; margin: 3rem auto; padding: 1rem; text-align:center;">
-    <h2 style="color:#1abc9c; font-weight:700; margin-bottom:2rem; font-size:1.8rem;">
-      Le Partenariat de l'Établissement
-    </h2>
-    <ul style="
-      display: flex;
-      flex-wrap: wrap;       /* ahafahana mihodina rehefa écran kely */
-      justify-content: center; 
-      gap: 2rem; 
-      padding: 0; margin: 0; 
-      list-style: none;
-      align-items: flex-start;
-    ">
-      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-        <div style="
-          width:120px; height:120px; 
-          border-radius: 50%; 
-          background: #1abc9c; 
-          color: white; 
-          font-weight: 700; 
-          font-size: 1.5rem; 
-          display: flex; justify-content: center; align-items: center;
-          box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-          text-transform: uppercase;
-          user-select:none;
-          margin-bottom: 0.5rem;
-        ">
-          FRAM
-        </div>
+   <section class="partenariat">
+    <h2>Le Partenariat de l'Établissement</h2>
+    <ul>
+      <li>
+        <div>FRAM</div>
         <span>Association des Parents d'Elève</span>
       </li>
-      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-        <img src="alliance.jpg" alt="Alliance Française" style="
-          width:120px; height:120px; object-fit: contain; 
-          border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
-          margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
+      <li>
+        <img src="alliance.jpg" alt="Alliance Française" />
         <span>Alliance Française Anjoma Fianarantsoa</span>
       </li>
-      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-        <img src="cedii.jpg" alt="CEDII" style="
-          width:120px; height:120px; object-fit: contain; 
-          border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
-          margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
-        <p style="text-align:center;">
-          <span class="accent">C</span>entre
-          d'<span class="accent">E</span>changes
-          de <span class="accent">D</span>ocumentation
-          et d'<span class="accent">I</span>nformation
-          <span class="accent">I</span>nterinstitutionnels
+      <li>
+        <img src="cedii.jpg" alt="CEDII" />
+        <p>
+          Centre d'Échanges de Documentation et d'Information Interinstitutionnels
         </p>
       </li>
     </ul>
-  </section
+  </section>
 <section>
   <main>
     <iframe
