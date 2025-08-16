@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LYCÉE PRIVÉ LA SOURCE - Historique</title>
   <style>
-    /* -----------------------------
-       VARIABLES ET RESET
-    ----------------------------- */
+    /* =============================
+       VARIABLES & RESET
+    ============================= */
     :root {
       --primary-color: #2c3e50;
       --secondary-color: #1abc9c;
       --accent-color: #3498db;
-      --light-color: #ecf0f1;
+      --light-color: #f8f9fa;
       --dark-color: #343a40;
       --text-color: #333;
       --text-light: #7f8c8d;
@@ -28,158 +28,30 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       color: var(--text-color);
-      background-color: #f9f9f9;
+      background-color: var(--light-color);
     }
   
-    /* -----------------------------
+    /* =============================
        HEADER
-    ----------------------------- */
+    ============================= */
     header {
       background: var(--dark-color);
       color: white;
-      padding: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    
-      :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #1abc9c;
-        --accent-color: #3498db;
-        --light-color: #f8f9fa;
-        --dark-color: #343a40;
-      }
-    
-      /* ----------------------------
-          GENERAL RESET
-      ---------------------------- */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--light-color);
-        color: #333;
-      }
-    
-      /* ----------------------------
-          HEADER
-      ---------------------------- */
-      header {
-        background: var(--dark-color);
-        color: white;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-    
-      .logo {
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        border: 3px solid var(--secondary-color);
-        object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
-      }
-    
-      .logo:hover {
-        transform: rotate(5deg);
-      }
-    
-      /* ----------------------------
-          NAVIGATION
-      ---------------------------- */
-      nav {
-        flex: 1;
-        text-align: right;
-      }
-    
-      .nav-list {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    
-      .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: white;
-        border-radius: 20px;
-        font-weight: 500;
-        transition: background 0.3s ease;
-      }
-    
-      .nav-link:hover {
-        background: rgba(255,255,255,0.1);
-      }
-    
-      .nav-link.active {
-        background-color: var(--secondary-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        transform: translateY(-2px);
-      }
-    
-      /* ----------------------------
-          HAMBURGER / MOBILE MENU
-      ---------------------------- */
-      .nav-toggle {
-        display: none;
-        font-size: 1.8rem;
-        color: white;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-    
-      /* ----------------------------
-          RESPONSIVE
-      ---------------------------- */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 1rem;
-        }
-    
-        .nav-list {
-          flex-direction: column;
-          width: 100%;
-          display: none; /* hidden by default */
-          margin-top: 0.5rem;
-        }
-    
-        .nav-list.show {
-          display: flex;
-        }
-    
-        .nav-link {
-          width: 100%;
-          padding: 1rem;
-          text-align: center;
-        }
-    
-        .nav-toggle {
-          display: block;
-        }
-      }
-    </style>
-    
+  
     .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
     }
   
     .branding {
@@ -204,12 +76,19 @@
     }
   
     .titre-principal {
-      display: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
     }
   
-    /* -----------------------------
+    /* =============================
        NAVIGATION
-    ----------------------------- */
+    ============================= */
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+  
     .nav-menu {
       list-style: none;
       display: flex;
@@ -247,9 +126,9 @@
       cursor: pointer;
     }
   
-    /* -----------------------------
-       MAIN & HISTORIQUE
-    ----------------------------- */
+    /* =============================
+       MAIN CONTENT & HISTORIQUE
+    ============================= */
     main {
       padding: 2rem;
       max-width: 1000px;
@@ -320,9 +199,9 @@
       border-radius: 6px;
     }
   
-    /* -----------------------------
+    /* =============================
        FOOTER
-    ----------------------------- */
+    ============================= */
     footer {
       background: linear-gradient(135deg, var(--primary-color), #34495e);
       color: white;
@@ -332,9 +211,9 @@
       font-size: 0.9rem;
     }
   
-    /* -----------------------------
+    /* =============================
        ANIMATIONS
-    ----------------------------- */
+    ============================= */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -346,9 +225,9 @@
       100% { transform: translateY(0px); }
     }
   
-    /* -----------------------------
+    /* =============================
        RESPONSIVE
-    ----------------------------- */
+    ============================= */
     @media (max-width: 768px) {
       header { flex-direction: column; align-items: flex-start; padding: 1.5rem 2rem; }
       .header-bar { flex-direction: column; padding: 1rem; justify-content: center; }
@@ -361,7 +240,7 @@
       .nav-toggle { display: block; margin-top: 0.5rem; }
     }
   </style>
-  >
+  
 </head>
 
 <body>

@@ -10,7 +10,7 @@
 
   <style>
     /* =========================
-       VARIABLES & STYLE GENERAL
+       VARIABLES & RESET
     ========================= */
     :root {
       --primary-color: #2c3e50;
@@ -40,8 +40,12 @@
     header {
       background: var(--dark-color);
       color: white;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
   
     .header-bar {
@@ -50,6 +54,7 @@
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
   
     .branding {
@@ -72,37 +77,43 @@
       transform: rotate(5deg);
     }
   
-    nav ul, .nav-list {
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+  
+    .nav-list {
       list-style: none;
       display: flex;
       gap: 1rem;
+      justify-content: flex-end;
+      align-items: center;
     }
   
-    nav a, .nav-link {
+    .nav-link {
       display: block;
       padding: 0.6rem 1rem;
-      color: white;
       text-decoration: none;
+      color: white;
       border-radius: 20px;
       font-weight: 500;
       text-align: center;
       transition: background 0.3s ease;
     }
   
-    nav a.active {
-      background-color: var(--secondary-color);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transform: translateY(-3px);
-    }
-  
-    nav a:hover:not(.active),
     .nav-link:hover {
       background: rgba(255,255,255,0.1);
     }
   
+    .nav-link.active {
+      background-color: var(--secondary-color);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+  
     .nav-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: white;
       background: none;
       border: none;
@@ -114,21 +125,12 @@
     ========================= */
     .map-container {
       width: 100%;
-      height: 400px; /* Default height */
+      height: 400px;
       max-width: 1000px;
       margin: 2rem auto;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-  
-    /* Make Google Maps responsive on mobile */
-    @media (max-width: 768px) {
-      .map-container {
-        height: 300px;
-        width: 100%;
-        padding: 0 1rem;
-      }
     }
   
     .map-title {
@@ -150,167 +152,42 @@
     }
   
     /* =========================
-       RESPONSIVE HEADER NAV
+       RESPONSIVE
     ========================= */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem;
       }
   
       .nav-list {
         flex-direction: column;
         width: 100%;
         display: none;
+        margin-top: 0.5rem;
       }
   
       .nav-list.show {
         display: flex;
       }
   
-      .nav-toggle {
-        display: block;
-        margin-top: 0.5rem;
-      }
-  
       .nav-link {
         width: 100%;
         padding: 1rem;
+        text-align: center;
+      }
+  
+      .nav-toggle {
+        display: block;
+      }
+  
+      .map-container {
+        height: 300px;
+        padding: 0 1rem;
       }
     }
-    
-      :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #1abc9c;
-        --accent-color: #3498db;
-        --light-color: #f8f9fa;
-        --dark-color: #343a40;
-      }
-    
-      /* ----------------------------
-          GENERAL RESET
-      ---------------------------- */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--light-color);
-        color: #333;
-      }
-    
-      /* ----------------------------
-          HEADER
-      ---------------------------- */
-      header {
-        background: var(--dark-color);
-        color: white;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-    
-      .logo {
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        border: 3px solid var(--secondary-color);
-        object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
-      }
-    
-      .logo:hover {
-        transform: rotate(5deg);
-      }
-    
-      /* ----------------------------
-          NAVIGATION
-      ---------------------------- */
-      nav {
-        flex: 1;
-        text-align: right;
-      }
-    
-      .nav-list {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    
-      .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: white;
-        border-radius: 20px;
-        font-weight: 500;
-        transition: background 0.3s ease;
-      }
-    
-      .nav-link:hover {
-        background: rgba(255,255,255,0.1);
-      }
-    
-      .nav-link.active {
-        background-color: var(--secondary-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        transform: translateY(-2px);
-      }
-    
-      /* ----------------------------
-          HAMBURGER / MOBILE MENU
-      ---------------------------- */
-      .nav-toggle {
-        display: none;
-        font-size: 1.8rem;
-        color: white;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-    
-      /* ----------------------------
-          RESPONSIVE
-      ---------------------------- */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 1rem;
-        }
-    
-        .nav-list {
-          flex-direction: column;
-          width: 100%;
-          display: none; /* hidden by default */
-          margin-top: 0.5rem;
-        }
-    
-        .nav-list.show {
-          display: flex;
-        }
-    
-        .nav-link {
-          width: 100%;
-          padding: 1rem;
-          text-align: center;
-        }
-    
-        .nav-toggle {
-          display: block;
-        }
-      }
-    </style>
-    
+  
     /* =========================
        MOBILE IMPROVEMENTS
     ========================= */
