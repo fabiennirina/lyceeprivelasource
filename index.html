@@ -60,6 +60,139 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       animation: slideIn 0.8s ease-out;
     }
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #1abc9c;
+        --accent-color: #3498db;
+        --light-color: #f8f9fa;
+        --dark-color: #343a40;
+      }
+    
+      /* ----------------------------
+          GENERAL RESET
+      ---------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-color);
+        color: #333;
+      }
+    
+      /* ----------------------------
+          HEADER
+      ---------------------------- */
+      header {
+        background: var(--dark-color);
+        color: white;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    
+      .logo {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        border: 3px solid var(--secondary-color);
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+    
+      .logo:hover {
+        transform: rotate(5deg);
+      }
+    
+      /* ----------------------------
+          NAVIGATION
+      ---------------------------- */
+      nav {
+        flex: 1;
+        text-align: right;
+      }
+    
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    
+      .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: white;
+        border-radius: 20px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+    
+      .nav-link:hover {
+        background: rgba(255,255,255,0.1);
+      }
+    
+      .nav-link.active {
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+      }
+    
+      /* ----------------------------
+          HAMBURGER / MOBILE MENU
+      ---------------------------- */
+      .nav-toggle {
+        display: none;
+        font-size: 1.8rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    
+      /* ----------------------------
+          RESPONSIVE
+      ---------------------------- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1rem;
+        }
+    
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          display: none; /* hidden by default */
+          margin-top: 0.5rem;
+        }
+    
+        .nav-list.show {
+          display: flex;
+        }
+    
+        .nav-link {
+          width: 100%;
+          padding: 1rem;
+          text-align: center;
+        }
+    
+        .nav-toggle {
+          display: block;
+        }
+      }
+    </style>
+    
     
     .logo {
       height: 60px;
@@ -299,7 +432,21 @@
       min-width: 120px;
       text-align: center;
     }
-    
+    @media (max-width: 768px) {
+      ul {
+        gap: 1rem; /* Mitovy amin'ny ecran kely */
+      }
+      li {
+        min-width: 100px; /* Mihena ny width raha écran kely */
+      }
+      li img, li div {
+        width: 100px;
+        height: 100px;
+      }
+      li p, li span {
+        font-size: 0.9rem;
+      }
+    }
     .partenaire-img, .fram-circle {
       width: 120px;
       height: 120px;
@@ -353,6 +500,18 @@
     @media (max-width: 600px) {
       .partenaires-list { flex-direction: column; gap: 2rem; }
     }
+     /* Responsive ho an'ny Android / écran kely */
+  @media (max-width: 768px) {
+    main iframe {
+      height: 350px; /* mihena ny haavony amin'ny écran kely */
+    }
+  }
+
+  @media (max-width: 480px) {
+    main iframe {
+      height: 300px; /* mihena kokoa amin'ny smartphone kely */
+    }
+  }
     </style>
     
 </head>
@@ -427,52 +586,59 @@
 
    <!-- PARTENARIAT (atsangano mivantana tsy ao anaty div na liste mitovy efitra) -->
 
-<section style="max-width: 900px; margin: 3rem auto; padding: 1rem; text-align:center;">
-  <h2 style="color:#1abc9c; font-weight:700; margin-bottom:2rem; font-size:1.8rem;">
-    Le Partenariat de l'Établissement
-  </h2>
-  <ul style="
-    display: flex; 
-    justify-content: center; 
-    gap: 3rem; 
-    padding: 0; margin: 0; 
-    list-style: none;
-    align-items: center;
+   <section style="max-width: 900px; margin: 3rem auto; padding: 1rem; text-align:center;">
+    <h2 style="color:#1abc9c; font-weight:700; margin-bottom:2rem; font-size:1.8rem;">
+      Le Partenariat de l'Établissement
+    </h2>
+    <ul style="
+      display: flex;
+      flex-wrap: wrap;       /* ahafahana mihodina rehefa écran kely */
+      justify-content: center; 
+      gap: 2rem; 
+      padding: 0; margin: 0; 
+      list-style: none;
+      align-items: flex-start;
     ">
-    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-      <div style="
-        width:120px; height:120px; 
-        border-radius: 50%; 
-        background: #1abc9c; 
-        color: white; 
-        font-weight: 700; 
-        font-size: 1.5rem; 
-        display: flex; justify-content: center; align-items: center;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        text-transform: uppercase;
-        user-select:none;
-        margin-bottom: 0.5rem;
-      ">
-        FRAM
-      </div>
-      <span>Association des Parents d'Elève</span>
-    </li>
-    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-      <img src="alliance.jpg" alt="Alliance Française" style="width:120px; height:120px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
-      <span>Alliance Française Anjoma Fianarantsoa</span>
-    </li>
-    <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
-      <img src="cedii.jpg" alt="CEDII" style="width:120px; height:120px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
-      <p>
-        <span class="accent">C</span>entre
-        d'<span class="accent">E</span>changes
-        de <span class="accent">D</span>ocumentation
-        et d'<span class="accent">I</span>nformation
-        <span class="accent">I</span>nterinstitutionnels
-      </p>
-    </li>
-  </ul>
-</section>
+      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+        <div style="
+          width:120px; height:120px; 
+          border-radius: 50%; 
+          background: #1abc9c; 
+          color: white; 
+          font-weight: 700; 
+          font-size: 1.5rem; 
+          display: flex; justify-content: center; align-items: center;
+          box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+          text-transform: uppercase;
+          user-select:none;
+          margin-bottom: 0.5rem;
+        ">
+          FRAM
+        </div>
+        <span>Association des Parents d'Elève</span>
+      </li>
+      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+        <img src="alliance.jpg" alt="Alliance Française" style="
+          width:120px; height:120px; object-fit: contain; 
+          border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+          margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
+        <span>Alliance Française Anjoma Fianarantsoa</span>
+      </li>
+      <li style="display:flex; flex-direction: column; align-items: center; min-width: 120px;">
+        <img src="cedii.jpg" alt="CEDII" style="
+          width:120px; height:120px; object-fit: contain; 
+          border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+          margin-bottom: 0.5rem; transition: transform 0.3s ease;" />
+        <p style="text-align:center;">
+          <span class="accent">C</span>entre
+          d'<span class="accent">E</span>changes
+          de <span class="accent">D</span>ocumentation
+          et d'<span class="accent">I</span>nformation
+          <span class="accent">I</span>nterinstitutionnels
+        </p>
+      </li>
+    </ul>
+  </section
 <section>
   <main>
     <iframe
