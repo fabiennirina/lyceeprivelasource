@@ -152,41 +152,37 @@
     }
   
     /* =========================
-       RESPONSIVE
-    ========================= */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-  
-      .nav-list {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 0.5rem;
-      }
-  
-      .nav-list.show {
-        display: flex;
-      }
-  
-      .nav-link {
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-      }
-  
-      .nav-toggle {
-        display: block;
-      }
-  
-      .map-container {
-        height: 300px;
-        padding: 0 1rem;
-      }
-    }
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block; /* visible en mobile */
+    align-self: flex-end; /* bouton à droite */
+  }
+}
   
     /* =========================
        MOBILE IMPROVEMENTS
@@ -274,7 +270,7 @@
       <!-- Email et Adresse après -->
       <div class="col-md-6 d-flex align-items-center bg-light p-3 rounded shadow-sm">
         <div class="fs-3 text-white bg-success rounded-circle d-flex justify-content-center align-items-center me-3" style="width:50px; height:50px;">✉️</div>
-        <p class="mb-0">lyceepriveelasource@gmail.com</p>
+        <p class="mb-0">lyceeprivelasource1@gmail.com</p>
       </div>
       <div class="col-md-6 d-flex align-items-center bg-light p-3 rounded shadow-sm">
         <div class="fs-3 text-white bg-info rounded-circle d-flex justify-content-center align-items-center me-3" style="width:50px; height:50px;">📍</div>
