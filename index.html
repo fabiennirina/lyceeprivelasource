@@ -448,7 +448,26 @@ footer {
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      style="width:100%; height:450px; border:0;">
+      style="main iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+      }
+      
+      /* Ho an'ny mobile: ataovy lehibe kokoa sady tsy mihoatra ny écran */
+      @media (max-width: 768px) {
+        main iframe {
+          height: 350px;   /* ampy ho lehibe hita tsara amin'ny tel */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        main iframe {
+          height: 300px;   /* mbola hita tsara, tsy tery loatra */
+        }
+      }
+      
+      ">
     </iframe>
   </main>
 </section>
