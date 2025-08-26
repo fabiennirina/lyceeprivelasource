@@ -448,16 +448,32 @@ footer {
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      style="section, main {
+      style="/* PC sy Android - responsive iframe */
+      section, main {
         width: 100%;
-        overflow-x: hidden;
+        overflow-x: hidden;  /* tsy hisy scroll horizontal */
       }
       
       main iframe {
-        width: 100vw;   /* mibahana ny largeur écran rehetra */
-        height: 60vh;   /* mibahana 60% amin’ny haavon’ny écran */
-        border: 0;
+        width: 100vw;     /* mibahana ny largeur écran rehetra */
+        height: 60vh;     /* mibahana 60% amin’ny haavon’ny écran */
+        border: 0;        /* tsy misy sisiny */
       }
+      
+      /* Ho an'ny écran kely (smartphone) */
+      @media (max-width: 768px) {
+        main iframe {
+          height: 50vh;   /* ambany kokoa ny haavo raha kely ny écran */
+        }
+      }
+      
+      /* Ho an'ny écran lehibe (PC) */
+      @media (min-width: 769px) {
+        main iframe {
+          height: 70vh;   /* avo kokoa ny iframe amin'ny PC */
+        }
+      }
+      
       
       
       ">
