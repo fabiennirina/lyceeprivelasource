@@ -186,8 +186,12 @@ footer {
    RESPONSIVE (TABLE)
 ========================= */
 @media (max-width: 768px) {
-  table, thead, tbody, th, td, tr { display: block; width: 100%; }
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+    width: 100%; 
+  }
   thead tr { display: none; }
+
   tbody tr {
     margin-bottom: 1rem;
     border: 1px solid #ddd;
@@ -195,26 +199,31 @@ footer {
     padding: 0.5rem;
     background-color: #f9f9f9;
   }
+
   tbody tr:nth-child(odd) { background-color: #f0f8ff; }
   tbody tr:nth-child(even) { background-color: #fffaf0; }
+
   td {
-    text-align: right;
+    text-align: left;  /* atao avy havia ny soratra ao anatin'ny cellule */
     padding-left: 50%;
     position: relative;
     border-bottom: 1px solid #ddd;
   }
   td:last-child { border-bottom: none; }
+
   td::before {
     content: attr(data-label);
     position: absolute;
-    left: 0;
+    left: 0;           /* avy havia tanteraka */
     width: 50%;
     padding-left: 0.75rem;
-    font-weight: bold;
-    text-align: left;
+    font-weight: bold;  /* anarana atao gras */
+    text-align: left;   /* avy havia ny label */
     color: #333;
   }
 }
+
+
 
 /* =========================
    RESPONSIVE (HEADER / NAV)
