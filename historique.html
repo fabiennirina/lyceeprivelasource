@@ -102,7 +102,7 @@ nav {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE (Mobile)
 ========================= */
 @media (max-width: 768px) {
   header {
@@ -128,125 +128,114 @@ nav {
     text-align: center;
   }
 
+  /* Ampiakatra 5cm ilay bouton menu */
   .nav-toggle {
-    display: block;
+    display: block;        
+    align-self: flex-end;  
+    margin-top: -5cm;      
   }
 }
 
-  
-    /* =============================
-       MAIN CONTENT & HISTORIQUE
-    ============================= */
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-  
-    .historique h2 {
-      color: var(--primary-color);
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      position: relative;
-      padding-bottom: 15px;
-    }
-  
-    .historique h2::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: var(--secondary-color);
-      border-radius: 2px;
-    }
-  
-    .historique article {
-      background: var(--light-color);
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      border-left: 4px solid var(--secondary-color);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-  
-    .historique article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-  
-    .historique article:nth-child(1) { animation-delay: 0.1s; }
-    .historique article:nth-child(2) { animation-delay: 0.3s; }
-    .historique article:nth-child(3) { animation-delay: 0.5s; }
-    .historique article:nth-child(4) { animation-delay: 0.7s; }
-    .historique article:nth-child(5) { animation-delay: 0.9s; }
-  
-    .historique p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: var(--text-color);
-      text-align: justify;
-    }
-  
-    .historique h4 {
-      color: var(--secondary-color);
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      text-align: center;
-      background: rgba(26,188,156,0.1);
-      padding: 0.8rem;
-      border-radius: 6px;
-    }
-  
-    /* =============================
-       FOOTER
-    ============================= */
-    footer {
-      background: linear-gradient(135deg, var(--primary-color), #34495e);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-  
-    /* =============================
-       ANIMATIONS
-    ============================= */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-  
-    /* =============================
-       RESPONSIVE
-    ============================= */
-    @media (max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; padding: 1.5rem 2rem; }
-      .header-bar { flex-direction: column; padding: 1rem; justify-content: center; }
-      .branding { margin-bottom: 1rem; justify-content: center; }
-      .logo { margin-right: 0; margin-bottom: 1rem; }
-      .titre-principal { font-size: 1.5rem; display: none; }
-      .nav-menu { flex-direction: column; gap: 0.5rem; width: 100%; }
-      .nav-menu li a { padding: 1rem; font-size: 0.9rem; text-align: center; }
-      .historique article { padding: 1.2rem; }
-      .nav-toggle { display: block; margin-top: 0.5rem; }
-    }
+/* =============================
+   MAIN CONTENT & HISTORIQUE
+============================= */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.historique h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.historique h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.historique article {
+  background: var(--light-color);
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.historique article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.historique article:nth-child(1) { animation-delay: 0.1s; }
+.historique article:nth-child(2) { animation-delay: 0.3s; }
+.historique article:nth-child(3) { animation-delay: 0.5s; }
+.historique article:nth-child(4) { animation-delay: 0.7s; }
+.historique article:nth-child(5) { animation-delay: 0.9s; }
+
+.historique p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.historique h4 {
+  color: var(--secondary-color);
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  background: rgba(26,188,156,0.1);
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  background: linear-gradient(135deg, var(--primary-color), #34495e);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+    
   </style>
   
 </head>
