@@ -331,9 +331,14 @@ footer {
     </table>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Lycée Privé La Source - Soanierana, Fianarantsoa</p>
+ <footer>
+    <p>&copy; <span id="year"></span> Lycée Privé La Source - Soanierana, Fianarantsoa</p>
   </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
   <script>
     // Toggle nav menu on mobile
     const navToggle = document.querySelector('.nav-toggle');
